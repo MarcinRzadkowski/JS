@@ -1,0 +1,28 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+.note-form {
+    margin-bottom: 20px;
+}
+.note-form input, .note-form textarea, .note-form button {
+    display: block;
+    margin: 10px 0;
+}
+.note {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px;
+    width: 200px;
+}
+.note h3 {
+    margin: 0;
+}
+.note-actions {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+}

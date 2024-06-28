@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NotePocket</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <h1>NotePocket</h1>
+    <div class="note-form">
+        <input type="text" id="noteTitle" placeholder="Title" required>
+        <textarea id="noteContent" placeholder="Content" required></textarea>
+        <input type="color" id="noteColor" value="#ffffff">
+        <label>
+            Pin:
+            <input type="checkbox" id="notePin">
+        </label>
+        <button onclick="addNote()">Add Note</button>
+    </div>
+    <div id="notesContainer"></div>
+
+    <script src="index.js"></script>
+</body>
+</html>
