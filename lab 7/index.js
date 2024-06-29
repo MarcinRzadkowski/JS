@@ -2,14 +2,13 @@ const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
 const numBallsInput = document.getElementById('numBalls');
 const distanceInput = document.getElementById('distance');
-const forceInput = document.getElementById('force');
 const startButton = document.getElementById('startButton');
 const resetButton = document.getElementById('resetButton');
 
 let balls = [];
 let animationId;
 let mouse = { x: 0, y: 0 };
-let force = parseFloat(forceInput.value);
+let force = 0.05;
 
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
