@@ -89,3 +89,46 @@ function animate() {
 
     animationId = requestAnimationFrame(animate);
 }
+
+startButton.addEventListener('click', () => {
+    createBalls();
+    animate();
+});
+
+resetButton.addEventListener('click', () => {
+    cancelAnimationFrame(animationId);
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    balls = [];
+});
+
+canvas.addEventListener('mousemove', (event) => {
+    mouse.x = event.clientX;
+    mouse.y = event.clientY;
+});
+
+canvas.addEventListener('click', (event) => {
+    const x = event.clientX;
+    const y = event.clientY;
+    for (let i = balls.length - 1; i >= 0; i--) {
+        const ball = balls[i];
+        const dx = x - ball.x;
+        const dy = y - ball.y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        if (dist < ball.radius) {
+            balls.splice(i, 1);
+            const radius = 10;
+            for (let j = 0; j < 2; j++) {
+                const x = Math.random() * (canvas.width - radius * 2) + radius;
+                const y = Math.random() * (canvas.height - radius * 2) + radius;
+                const vx = (Math.random() - 0.5) * 2;
+                const vy = (Math.random() - 0.5) * 2;
+                balls.push(new Ball(x, y, vx, vy, radius));
+            }
+            break;
+        }
+    }
+});
+
+    forceInput.addEventListener('change', () => {
+    force = parseFloat(forceInput.value);
+});
