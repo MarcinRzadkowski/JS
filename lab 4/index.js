@@ -43,7 +43,7 @@ function displayNotes() {
     const notes = getNotes();
     notesContainer.innerHTML = '';
 
-    notes.sort((a, b) => b.pin - a.pin); // Pin notes to the top
+    notes.sort((a, b) => b.pin - a.pin); 
 
     notes.forEach((note, index) => {
     const noteElement = document.createElement('div');
