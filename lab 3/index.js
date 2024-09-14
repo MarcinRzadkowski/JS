@@ -67,7 +67,7 @@ function recordSound(key) {
 
 function startRecording(channel) {
     currentChannel = channel;
-    recording[channel] = []; // Clear the previous recording
+    recording[channel] = []; 
     isRecording = true;
 }
 
